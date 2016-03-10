@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Deck {
 
 	//instance variables
-	private ArrayList<Cards> cards = new ArrayList<Cards>();	//ArrayList of Card objects.
+	private ArrayList<Card> cards = new ArrayList<Card>();	//ArrayList of Card objects.
 	private String[] ranks = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king", "ace"};
 	private String[] suites = new String[]{"spades", "hearts", "diamonds", "clubs"};
 	
