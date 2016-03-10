@@ -23,11 +23,11 @@ points are assigned by order of rank
   7			7
   8			8
   9			9
-  10		 10
-  Jack		 10
-  Queen		 10
-  King		 10
-  Ace		 1 OR 11
+  10			 10
+  Jack			 10
+  Queen			 10
+  King			 10
+  Ace			 1 OR 11
   
     Notice that Ace's are worth 1 or 11. If the player's total hand size is > 10 WITHOUT the Ace having been added to the total
   then the Ace's value is 1. By default, however, the Ace's value is 11. This way, if a player is holding a Two and a Nine,
