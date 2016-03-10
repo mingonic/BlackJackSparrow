@@ -1,0 +1,71 @@
+----CSCI 1101 Group Project----
+
+------Blackjack-----
+
+Rules of Blackjack
+
+Consists of 52 card deck. There are 4 suites (Spades, Diamonds, Spades, Hearts) and 13 ranks (two, three, ..., ace).
+
+There are two players, the gambler and the dealer. Each player is given two cards initially. Players evaluate their 
+card values and decide whether or not to hit or stand. If a player stands, they stand for the rest of the game and 
+receive no more cards. If a player hits, they receive another card and add the value of said card to their total value.
+If at any point either of the player busts (their hand value exceeds 21 points) they lose. Priority is given
+to the deal (I think). 
+
+--Points--
+points are assigned by order of rank
+  Rank		Points
+  2			2
+  3			3
+  4			4
+  5			5
+  6			6
+  7			7
+  8			8
+  9			9
+  10		10
+  Jack		10
+  Queen		10
+  King		10
+  Ace		1 OR 11
+  
+    Notice that Ace's are worth 1 or 11. If the player's total hand size is > 10 WITHOUT the Ace having been added to the total
+  then the Ace's value is 1. By default, however, the Ace's value is 11. This way, if a player is holding a Two and a Nine,
+  then if they draw an Ace, the hand value will be 12, not 22. However, if they have a Nine and an Ace, their hand value
+  is 20.
+  
+--Order of Player--
+
+    The game starts and the Dealer and Gambler are each dealt two cards. Each must show the first of those cards to the other.
+  The Players much then each decide if they will stand or hit. If they stand, they remain standing for the rest of the game. If
+  they hit, the are dealt another card, and that card will be added to their Hand's value. The Players who hit will then
+  have the option to stand or to hit again. This cycle will repeat until one of three conditions are met:
+  	1) A player hits and busts (their hand value is > 21)
+  	2) A player has a Blackjack (hand value = 21)
+  	3) Both players stand   
+  Once these conditions have been met, the game will end, and the player with the hand value closet to, and not exceeding, 21 wins.
+  Ties are in favor of the Dealer (I believe).
+  
+Classes needed to implement:
+
+Player
+
+Deck
+	-cards		:	ArrayList<Card>
+	-suites		:	String[]
+	-ranks		:	String[]
+	+Deck()		:	void
+	+deal()		:	Card
+	+shuffle()	:	void	
+	+toString()	:	String
+Card
+
+Hand
+
+Game/Demo
+
+
+
+
+
+
