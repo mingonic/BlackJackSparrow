@@ -33,7 +33,7 @@ public class Deck {
 	
 	public String toString(){
 		String result = "";
-		for (int i = 0; i<this.cards.getLength() - 1; i++){
+		for (int i = 0; i<this.cards.size() - 1; i++){
 			result += cards.get(i);
 		}
 		return result;
