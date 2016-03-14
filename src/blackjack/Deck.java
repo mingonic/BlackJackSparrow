@@ -11,10 +11,10 @@ public class Deck {
 	private String[] suites = new String[]{"spades", "hearts", "diamonds", "clubs"};
 	
 	//constructor
-	public Deck(Card card){
-		for (int i = 0; i < suites.length-1; i++){				//for every element in suites
-			for (int j = 0; j<ranks.length-1; j++){				//and for every element in ranks
-				Card newCard = new Card(ranks[i], suites[j]);					//create a new Card, newCard, with suite i and rank j
+	public Deck(){
+		for (int i = 0; i < suites.length; i++){				//for every element in suites
+			for (int j = 0; j<ranks.length; j++){				//and for every element in ranks
+				Card newCard = new Card(suites[i], ranks[j]);		//create a new Card, newCard, with suite i and rank j
 				cards.add(newCard);								//add this card to the ArrayList, cards
 			}
 		}
@@ -31,10 +31,10 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 	
-	public String toString(){
+	public String toString(){							//prints out the Cards of the deck on every line
 		String result = "";
-		for (int i = 0; i<this.cards.size() - 1; i++){
-			result += cards.get(i);
+		for (int i = 0; i<this.cards.size(); i++){
+			result += cards.get(i) + "\n";
 		}
 		return result;
 	}
