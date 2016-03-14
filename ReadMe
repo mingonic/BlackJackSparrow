@@ -14,7 +14,7 @@ to the deal (I think).
 
 --Points--
 points are assigned by order of rank
-  Rank		Points
+  Rank			Points
   2			2
   3			3
   4			4
@@ -58,8 +58,17 @@ Deck
 	+deal()		:	Card
 	+shuffle()	:	void	
 	+toString()	:	String
+	
 Card
-
+	-suite		:	String
+	-name		:	String
+	+getSuit()	:	String
+	+getName()	:	String
+	+lowVal()	:	int
+	+hiVal()	:	int
+	+toString()	:	String
+	+isAce()	:	boolean
+	
 Hand
 
 Game/Demo
