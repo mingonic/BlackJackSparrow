@@ -13,7 +13,9 @@ public class Test {
 		
 		Card myCard = deck.deal();											//deals a card
 		
-		System.out.println("We drew the " + myCard + "!");											//prints that card
+		System.out.println("We drew the " + myCard + "!\n");				//prints that card
+		
+		System.out.println("Updated deck after drawing:\n" + deck);
 	}
 	
 }
