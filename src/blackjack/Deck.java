@@ -7,7 +7,7 @@ public class Deck {
 
 	//instance variables
 	private ArrayList<Card> cards = new ArrayList<Card>();	//ArrayList of Card objects.
-	private String[] ranks = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king", "ace"};
+	private String[] ranks = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "Jack", "Queen", "King", "ace"};
 	private String[] suites = new String[]{"spades", "hearts", "diamonds", "clubs"};
 	
 	//constructor
@@ -20,11 +20,11 @@ public class Deck {
 		}
 	}
 	
-	//deal method deals a new Card object to the player. This card is the top of the deck (front of ArrayList)
+	//deal method deals a new Card object to the player. This card is the top of the deck (back of ArrayList)
 	public Card deal(){
-		Card topCard = cards.get(0);			//top card is the front of array list
-		cards.remove(0);						//we drew the card, remove from deck
-		return topCard;							//return Card to player
+		Card topCard = cards.get(cards.size()-1); //top card is the front of array list
+		cards.remove(cards.size()-1);			  //we drew the card, remove from deck
+		return topCard;						      //return Card to player
 	}
 	
 	public void shuffle(){						//shuffle deck so cards in ArrayList are in random order
