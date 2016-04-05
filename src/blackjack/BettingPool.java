@@ -2,22 +2,34 @@ package blackjack;
 
 public class BettingPool 
 {
-	private int totalVal;
-	private Chip chip;
+	private double poolVal;
+	private double bet;
 	
 	BettingPool()
 	{
-		totalVal = 0;
+		poolVal = 0.0;
+		bet = 5.0;
 	}
 	
 	public void resetPool()
 	{
-		totalVal = 0;
+		poolVal = 0.0;
 	}
 	
-	public void check(Chip c)
+	public void addMoney(double n)
 	{
-		totalVal += c.getChip();
+		if (n == bet)
+			poolVal += n;
+		else if (n > bet)
+			poolVal += n;
+		else if (n < bet)
+			System.out.println("Insufficient funds. You must check more money.");
+	}
+	
+	public void addMoneyRaise(double m)
+	{
+		poolVal += m;
+		bet += m;
 	}
 	
 }

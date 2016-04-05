@@ -1,46 +1,43 @@
 package blackjack;
 
-import java.util.ArrayList;
-
 public class Wallet 
 {
-	private ArrayList<Chip> chip;
-	
+	//private ArrayList<Chip> chip;
+	private double total;
 	public Wallet()
 	{
-		
-		chip = new ArrayList<Chip>(50);
+		total = 50.0;
 	}
 	
 	// check if the player has any money/chips left
 	public boolean checkEmpty()
 	{
-		return chip.isEmpty();
+		if (total == 0.0)
+			return true;
+		else
+			return false;
 	}
 	
 	// putting funds on the table
-	public void removeFunds(int n)
+	public void removeFunds(double n)
 	{
-		int limit = (chip.size()-1) - n;
-		
-		for (int i=chip.size()-1; i>=limit; i--)
-		{
-			chip.remove(i);
-		}
+		total -= n;
 	}
 	
 	// adding money
-	public void addFund(int n, Chip c)
+	public void addFund(double n)
 	{
-		for (int i=0; i<n; i++)
-		{
-			chip.add(c);
-		}
+		total += n;
 	}
 	
 	// get total number of chips
-	public int getTotalValue()
+	public double getTotalValue()
 	{
-		return chip.size();
+		return total;
+	}
+	
+	public String toString()
+	{
+		return "Total funds in wallet: $" + total;
 	}
 }
