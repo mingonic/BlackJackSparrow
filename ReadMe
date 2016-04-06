@@ -49,16 +49,17 @@ points are assigned by order of rank
 Classes needed to implement:
 
 Player
-	-Wallet			:	Wallet
-	-Hand			:	Hand
+	-wallet			:	Wallet
+	-hand			:	Hand
+	-status			:	boolean			//status if the players hits/stands
 	
 	+Player()		:	
-	+hit()			:	Card
-	+stand()		:	void
-	+call(double)	:	void
-	+raise(double)	:	void
-	+fold()			:	void
-	+quit()			:	void
+	+hit()			:	Card			//indicate you'll draw a card
+	+stand()		:	void			//player does not draw a card
+	+call(double)		:	void		//match the bet, a double, in order to hit
+	+raise(double)		:	void		//raise the bet, by a double amount
+	+fold()			:	void			//you will not finish this hand
+	+quit()			:	void			//end the game against the dealer
 
 Deck
 	-cards			:	ArrayList<Card>
@@ -86,9 +87,9 @@ Hand
 	-playerHand		:	ArrayList<Card>
 	
 	+Hand()			:	
-	+addToHand(Card):	int
+	+addToHand(Card)	:	int
 	+bust()			:	boolean
-	+blackjack()	:	boolean
+	+blackjack()		:	boolean
 	+toString()		:	String
 	
 Wallet
