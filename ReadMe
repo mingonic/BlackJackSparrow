@@ -49,27 +49,51 @@ points are assigned by order of rank
 Classes needed to implement:
 
 Player
+	-Wallet			:	Wallet
+	-Hand			:	Hand
+	
+	+Player()		:	
+	+hit()			:	Card
+	+stand()		:	void
+	+call(double)	:	void
+	+raise(double)	:	void
+	+fold()			:	void
+	+quit()			:	void
 
 Deck
-	-cards		:	ArrayList<Card>
-	-suites		:	String[]
-	-ranks		:	String[]
-	+Deck()		:	void
-	+deal()		:	Card
-	+shuffle()	:	void	
-	+toString()	:	String
+	-cards			:	ArrayList<Card>
+	-suites			:	String[]
+	-ranks			:	String[]
+	
+	+Deck()			:	
+	+deal()			:	Card
+	+shuffle()		:	void	
+	+toString()		:	String
 	
 Card
-	-suite		:	String
-	-name		:	String
-	+getSuit()	:	String
-	+getName()	:	String
-	+lowVal()	:	int
-	+hiVal()	:	int
-	+toString()	:	String
-	+isAce()	:	boolean
+	-suite			:	String
+	-name			:	String
+	
+	+Card(Str, Str)	:	
+	+getSuit()		:	String
+	+getName()		:	String
+	+lowVal()		:	int
+	+hiVal()		:	int
+	+toString()		:	String
+	+isAce()		:	boolean
 	
 Hand
+	-playerHand		:	ArrayList<Card>
+	
+	+Hand()			:	
+	+addToHand(Card):	int
+	+bust()			:	boolean
+	+blackjack()	:	boolean
+	+toString()		:	String
+	
+Wallet
+
+BettingPool
 
 Game/Demo
 
