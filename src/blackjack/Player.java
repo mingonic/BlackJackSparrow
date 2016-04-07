@@ -25,6 +25,11 @@ public class Player {
 		System.out.println(name + " has decided to hit.");
 		hand.addToHand(d.deal() );
 	}
+	
+	public void addToHand(Card card){
+		hand.addToHand(card);
+	}
+	
 	//player decides to stand:
 	public void stand(){
 		status = "stand";
