@@ -14,8 +14,9 @@ public class Deck {
 	public Deck(){
 		for (int i = 0; i < suites.length; i++){				//for every element in suites
 			for (int j = 0; j<ranks.length; j++){				//and for every element in ranks
+
 				Card newCard = new Card(suites[i], ranks[j]);		//create a new Card, newCard, with suite i and rank j
-				cards.add(newCard);								//add this card to the ArrayList, cards
+				cards.add(newCard);											//add this card to the ArrayList, cards
 			}
 		}
 	}
