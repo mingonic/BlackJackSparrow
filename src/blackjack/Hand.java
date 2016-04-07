@@ -15,6 +15,10 @@ public class Hand {
 		playerHand.add(card);														//adds a card object to the hand
 	}
 	
+	public void clearHand() {
+		playerHand.clear();
+	}
+	
 	public int handValue(){																
 		int score = 0;																//initial score is 0
 		int aces = 0;																//num of aces we have in our hand
