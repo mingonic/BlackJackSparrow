@@ -2,8 +2,8 @@ package blackjack;
 
 public class Wallet 
 {
-	//private ArrayList<Chip> chip;
 	private double total;
+	
 	public Wallet()
 	{
 		total = 50.0;
