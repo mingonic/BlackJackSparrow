@@ -5,7 +5,7 @@ public class Player {
 	private String status;
 	private Hand hand;
 	private Wallet wallet;
-	String name;
+	private String name;
 	
 	public Player(String n){
 		name = n;
@@ -51,8 +51,5 @@ public class Player {
 		System.out.println(name + " has folded");
 	}
 	//Player quits, program terminates:
-	public void quit(){
-		System.out.println(name + " has decided to quit. Game Over.");
-		System.exit(0);
-	}
+
 }
