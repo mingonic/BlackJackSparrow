@@ -45,6 +45,12 @@ public class Hand {
 		return false;																//otherwise return false
 	}
 	
+	public boolean has21() {
+		if (handValue() != 21)
+			return false;
+		return true;
+	}
+	
 	public String toString(){
 		String result = "";
 		for (int i = 0; i < playerHand.size(); i++){
