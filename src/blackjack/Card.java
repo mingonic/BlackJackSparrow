@@ -1,5 +1,6 @@
 package blackjack;
 
+
 public class Card {
 
 	private String suite;
@@ -10,7 +11,7 @@ public class Card {
 		suite = s;
 		name = n;
 	}
-	//this is a test comment
+
 	//Mutators
 	public String getSuit(){return suite;}
 	public String getName(){return name;}
