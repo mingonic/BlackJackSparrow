@@ -1,5 +1,11 @@
 package blackjack;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 //import java.awt.image.*;
 //import java.io.*;
 
@@ -7,32 +13,36 @@ package blackjack;
 
 public class Card {
 
-	private final static String imgPathName = new String("/resouces");
 	private String suite;
 	private String name;
-	//private BufferedImage cardImage;
+	private String imageLoc;
+	private BufferedImage image;
 	
 	//Constructor
-	public Card (String s, String n) {
+	public Card (String s, String n, String i) {
 		suite = s;
 		name = n;
-		//cardImage = initCardImage();
+		imageLoc = "/resources/"+i+".gif";
+		System.out.println(imageLoc);
+		this.image = initCardImage();
 	}
 
-	//Mutators
+	//Accessors
 	public String getSuit(){return suite;}
 	public String getName(){return name;}
+	public BufferedImage getImage(){return image;}
 	
-	/*
+
 	public BufferedImage initCardImage(){
 		try {
-			cardImage = ImageIO.read(new File(imgPathName+"2c"));
+			image = ImageIO.read(new File("./resources"+imageLoc+".gif"));
 		} catch(IOException e) {
 			e.printStackTrace();
+			System.out.println("IMAGE NOT FOUND");
 		}
-		return cardImage;
+		return image;
 	}
-	*/
+
 	
 	public int loVal(){								//Checks the name of the card
 		if (name.equals("two"))						//match up the name of the card with the

@@ -99,7 +99,7 @@ public class Game {
 				
 			} else if (dealer.getHand().bust()) {
 				System.out.println("The Dealer busted! You win " + bet*2 + "!");
-				player.getWallet().addFund(moneyPit.playerWins()); moneyPit.resetPool();
+				player.getWallet().addFund(moneyPit.playerWins()); dealer.getWallet().removeFunds(bet); moneyPit.resetPool();
 				
 			} else if (dealer.getHand().blackjack()) {
 				System.out.println("The Dealer has a Blackjack! The Dealer wins!");
@@ -107,11 +107,11 @@ public class Game {
 				
 			} else if (player.getHand().blackjack()) {
 				System.out.println("You have a Blackjack! You win " + moneyPit.playerBlackJacks() + "!");
-				player.getWallet().addFund(moneyPit.playerBlackJacks()); moneyPit.resetPool();
+				player.getWallet().addFund(moneyPit.playerBlackJacks()); dealer.getWallet().removeFunds(moneyPit.playerBlackJacks()); moneyPit.resetPool();
 				
 			} else if (player.getHand().handValue() > dealer.getHand().handValue()) {
 				System.out.println("You win " + moneyPit.playerWins() + "!");
-				player.getWallet().addFund(moneyPit.playerWins()); moneyPit.resetPool();
+				player.getWallet().addFund(moneyPit.playerWins()); dealer.getWallet().removeFunds(bet); moneyPit.resetPool();
 				
 			} else {
 				System.out.println("The dealer wins!");

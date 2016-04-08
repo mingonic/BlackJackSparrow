@@ -12,7 +12,7 @@ public class Deck {
 	String filechar;							//for GUI
 	String filerank;							//for GUI
 	String imgFile;								//for GUI
-	String dir = "/resources";					//for GUI
+	//String dir = "/resources";					//for GUI
 	
 	//constructor
 	public Deck(){
@@ -56,9 +56,9 @@ public class Deck {
 				else
 					filerank = "a";
 				
-				imgFile = dir+filerank+filechar;					//concatenate the string
+				imgFile = filerank+filechar;					//concatenate the string
 
-				Card newCard = new Card(suites[i], ranks[j]);		//create a new Card, newCard, with suite i and rank j
+				Card newCard = new Card(suites[i], ranks[j], "2c");		//create a new Card, newCard, with suite i and rank j
 				cards.add(newCard);											//add this card to the ArrayList, cards
 			}
 		}

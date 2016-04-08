@@ -2,11 +2,15 @@ package blackjack;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class GUI extends JFrame implements ActionListener {
-
+	Card card;
+	static int count = 0;
 	private JPanel board, dash, playerInfo, betInfo, playerWalletInfo, dealerWalletInfo;
 	private JButton hit, stand, resign;
 	private JLabel handVal, walletVal, dealerWallet, betValue, deck, playerName;
@@ -14,7 +18,7 @@ public class GUI extends JFrame implements ActionListener {
 	private JTextField playerNameField, betField, currentHandVal, currentWalletVal, currdentDWalletVal, currentBetVal;
 	
 	public GUI(){
-		
+		card = new Card("clubs", "ace", "2c");
 		JFrame frame = new JFrame("BlackJackSparrow");
 		board = new JPanel(new BorderLayout());
 		dash = new JPanel(new GridLayout(2, 3, 3, 3));
@@ -24,6 +28,7 @@ public class GUI extends JFrame implements ActionListener {
 		dealerWalletInfo = new JPanel();
 		
 		hit = new JButton("Hit!");
+		hit.addActionListener(this);
 		stand = new JButton("Stand");
 		resign = new JButton("Resign");
 		
@@ -81,12 +86,36 @@ public class GUI extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
-		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-
+		if (e.getSource() == hit) {
+			System.out.println("ITS A ME" + count);
+			repaint();
+			count++;
+		}
 		
+	}
+	
+	public void paint(Graphics g) {
+		super.paintComponents(g);
+
+
+		//g.drawImage(ImageIO.read(new File("resources/2c.gif")), 0, 0, null);
+
+		g.drawImage(card.getImage(), 0, 0, null);
+
+		if (count==0) {
+			g.drawRect(230,  80,  10,  10);
+			g.setColor(Color.BLACK);
+		} else if (count==1){
+			g.setColor(Color.RED);
+			g.drawRect(230,  200,  10,  10);
+		} else {
+			g.drawRect(230,  80,  10,  10);
+			g.setColor(Color.BLACK);
+		}
+			
 	}
 	
 	public static void main(String[] args){
