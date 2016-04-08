@@ -15,32 +15,46 @@ public class Card {
 
 	private String suite;
 	private String name;
-	private String imageLoc;
-	private BufferedImage image;
+	private String imageLoc, imageBackLoc;
+	private BufferedImage image, imageBack;
 	
 	//Constructor
 	public Card (String s, String n, String i) {
 		suite = s;
 		name = n;
-		imageLoc = "/resources/"+i+".gif";
-		System.out.println(imageLoc);
+		imageLoc = "resources/"+i+".gif";
+		imageBackLoc = "resources/b.gif";
+		//System.out.println(imageLoc);
 		this.image = initCardImage();
+		this.imageBack = initCardBackImage();
+		
 	}
 
 	//Accessors
 	public String getSuit(){return suite;}
 	public String getName(){return name;}
 	public BufferedImage getImage(){return image;}
+	public BufferedImage getBackImage(){return imageBack;}
 	
 
 	public BufferedImage initCardImage(){
 		try {
-			image = ImageIO.read(new File("./resources"+imageLoc+".gif"));
+			image = ImageIO.read(new File(imageLoc));
 		} catch(IOException e) {
 			e.printStackTrace();
 			System.out.println("IMAGE NOT FOUND");
 		}
 		return image;
+	}
+	
+	public BufferedImage initCardBackImage(){
+		try {
+			imageBack = ImageIO.read(new File(imageBackLoc));
+		} catch(IOException e) {
+			e.printStackTrace();
+			System.out.println("IMAGE NOT FOUND");
+		}
+		return imageBack;
 	}
 
 	
