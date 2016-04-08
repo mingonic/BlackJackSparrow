@@ -1,21 +1,38 @@
 package blackjack;
 
+//import java.awt.image.*;
+//import java.io.*;
+
+//import javax.imageio.ImageIO;
 
 public class Card {
 
+	private final static String imgPathName = new String("/resouces");
 	private String suite;
 	private String name;
+	//private BufferedImage cardImage;
 	
 	//Constructor
 	public Card (String s, String n) {
 		suite = s;
 		name = n;
+		//cardImage = initCardImage();
 	}
 
 	//Mutators
 	public String getSuit(){return suite;}
 	public String getName(){return name;}
 	
+	/*
+	public BufferedImage initCardImage(){
+		try {
+			cardImage = ImageIO.read(new File(imgPathName+"2c"));
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return cardImage;
+	}
+	*/
 	
 	public int loVal(){								//Checks the name of the card
 		if (name.equals("two"))						//match up the name of the card with the
