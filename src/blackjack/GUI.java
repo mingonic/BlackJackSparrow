@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener {
 
 	private JPanel board, dash, playerInfo, betInfo, playerWalletInfo, dealerWalletInfo;
 	private JButton hit, stand, resign;
@@ -39,11 +39,16 @@ public class GUI extends JFrame {
 		JLabel[] dealerHandHolder = new JLabel[11];
 		
 		JTextField playerNameField = new JTextField(15);
+		playerNameField.setEditable(false);
 		JTextField betField = new JTextField(6);
 		JTextField currentHandVal = new JTextField(2);
+		currentHandVal.setEditable(false);
 		JTextField currentWalletVal = new JTextField(6);
+		currentWalletVal.setEditable(false);
 		JTextField currentDWalletVal = new JTextField(6);
+		currentDWalletVal.setEditable(false);
 		JTextField currentBetVal = new JTextField(6);
+		currentBetVal.setEditable(false);
 		
 		//board.add(dealerHandHolder, BorderLayout.NORTH);
 		//board.add(playerHandHolder, BorderLayout.SOUTH);
@@ -77,6 +82,10 @@ public class GUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+
 		
 	}
 	
