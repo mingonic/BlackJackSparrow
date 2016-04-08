@@ -36,7 +36,7 @@ public class Game {
 			return false;
 			
 		} else if (dealer.getHand().bust()) {
-			System.out.println("The Dealer busted! You win " + bet*2 + "!");
+			System.out.println("The Dealer busted! You win " + moneyPit.playerWins() + "!");
 			player.getWallet().addFund(moneyPit.playerWins()); dealer.getWallet().removeFunds(bet); moneyPit.resetPool();
 			return true;
 			

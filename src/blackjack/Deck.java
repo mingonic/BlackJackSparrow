@@ -57,7 +57,6 @@ public class Deck {
 				}
 				
 				imgFile = filerank+filechar;								//concatenate the string
-				System.out.println(imgFile);
 				Card newCard = new Card(suites[i], ranks[j], imgFile);		//create a new Card, newCard, with suite i and rank j
 				cards.add(newCard);											//add this card to the ArrayList, cards
 			}
