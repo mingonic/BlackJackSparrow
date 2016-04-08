@@ -51,15 +51,17 @@ Classes needed to implement:
 Player
 	-wallet			:	Wallet
 	-hand			:	Hand
-	-status			:	boolean			//status if the players hits/stands
+	-name			:	String
 	
-	+Player()		:	
-	+hit()			:	Card			//indicate you'll draw a card
-	+stand()		:	void			//player does not draw a card
-	+call(double)		:	void		//match the bet, a double, in order to hit
-	+raise(double)		:	void		//raise the bet, by a double amount
-	+fold()			:	void			//you will not finish this hand
-	+quit()			:	void			//end the game against the dealer
+	+Player(String)	:
+	+getHand		:	Hand
+	+getWallet		:	Wallet
+	+getName		:	String	
+	+hit(Deck)		:	Void			
+	+addToHand(Card):	Void
+	+stand()		:	void			
+	+bet(double,BP)	:	void
+	+fold()			:	void
 
 Deck
 	-cards			:	ArrayList<Card>
@@ -93,8 +95,25 @@ Hand
 	+toString()		:	String
 	
 Wallet
+	-total			:	double
+	
+	+Wallet()		:
+	+checkEmpty()	:	boolean
+	+removeFunds(db):	void
+	+addFund(doub)	:	void
+	+getTotalValue():	double
+	+toString()		:	String
 
 BettingPool
+	-poolVal		:	double
+	-bet			:	double
+	
+	+BettingPool()	:
+	+resetPool()	:	void
+	+addMoney(doubl):	void
+	+playerWins()	:	double
+	+playerBlackJacks():	double
+	+getBet()		:	double
 
 Game/Demo
 

@@ -24,12 +24,6 @@ public class BettingPool
 			System.out.println("Insufficient funds. You must check more money.");
 	}
 	
-	public void addMoneyRaise(double m)
-	{
-		poolVal += m;
-		bet += m;
-	}
-	
 	public double playerWins() {
 		return poolVal*2;
 	}
