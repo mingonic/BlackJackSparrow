@@ -48,7 +48,6 @@ public class Game extends javax.swing.JFrame {
 			stand.doClick();
 			dealersTurn = true;
 		}
-		//updateAll();
 	}
 	
 	public void bet(double m, JButton stand){
@@ -66,15 +65,13 @@ public class Game extends javax.swing.JFrame {
 				dealersTurn = true;
 				stand.doClick();
 			}
-			//updateAll();
 		}	
 	}
 	
 	public void resign(){
 		gui.hidePanels();
 		newRound();
-		//updateAll();
-		gui.updateStatus("Game over");		
+		gui.resign();	
 	}
 	
 	public void stand() {
