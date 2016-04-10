@@ -24,7 +24,6 @@ public class Card {
 		name = n;
 		imageLoc = "resources/"+i+".gif";
 		imageBackLoc = "resources/b.gif";
-		//System.out.println(imageLoc);
 		this.image = initCardImage();
 		this.imageBack = initCardBackImage();
 		
