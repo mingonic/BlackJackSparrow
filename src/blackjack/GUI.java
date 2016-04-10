@@ -25,7 +25,7 @@ public class GUI extends JFrame implements ActionListener {
 		game = parentGame;
 		
 		JFrame frame = new JFrame("BlackJackSparrow");
-		board = new JPanel(new BorderLayout());
+		board = new JPanel(new GridLayout(3, 3, 3, 3));
 		dash = new JPanel(new GridLayout(2, 4, 3, 3));
 		playerInfo = new JPanel();
 		betInfo = new JPanel();
@@ -48,9 +48,11 @@ public class GUI extends JFrame implements ActionListener {
 		walletVal = new JLabel("Player's wallet value: ");
 		dealerWallet = new JLabel("Dealer's wallet value: ");
 		gameOver = new JLabel("");
+		gameOver.setFont(new Font("Serif", Font.BOLD, 20));
 		betValue = new JLabel("Current bet: $");
 		gameStatus = new JLabel("");
 		gameStatus.setVisible(true);
+		gameStatus.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		playerNameField = new JTextField(15);
 		playerNameField.setEditable(false);
@@ -77,9 +79,6 @@ public class GUI extends JFrame implements ActionListener {
 		dealerWalletInfo.add(dealerWallet);
 		dealerWalletInfo.add(currentDWalletVal);
 		
-		board.add(gameInfo, BorderLayout.CENTER);
-
-		
 		dash.add(playerInfo);
 		dash.add(hit);
 		dash.add(betInfo);
@@ -90,12 +89,14 @@ public class GUI extends JFrame implements ActionListener {
 		dash.add(resign);
 		
 		add(board, BorderLayout.NORTH);
+		add(gameInfo, BorderLayout.CENTER);
 		add(dash, BorderLayout.SOUTH);
 		
 		setTitle("BlackJackSparrow");
 		setSize(900, 700);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
 		setVisible(true);
 		
 	}
@@ -128,7 +129,6 @@ public class GUI extends JFrame implements ActionListener {
 			if (i==1)
 				g.drawImage(game.getDealer().getHand().getPlayerHand().get(i-1).getImage(), 50*i, 50, null);
 			else if ((game.getDealer().getHand().handValue() > 16 && game.getTurn())|| game.getPlayer().getHand().handValue() >= 21) {
-				System.out.println("oops");
 				g.drawImage(game.getDealer().getHand().getPlayerHand().get(i-1).getImage(), 50*i, 50, null);
 			} else
 				g.drawImage(game.getDealer().getHand().getPlayerHand().get(i-1).getBackImage(), 50*i, 50, null);
@@ -178,6 +178,11 @@ public class GUI extends JFrame implements ActionListener {
 	public void hidePanels() {
 		dash.setVisible(false);
 		board.setVisible(false);
+	}
+	
+	public void resign() {
+		gameStatus.setText("Game Over:");
+		gameOver.setText(" You have resigned");
 	}
 
 }
