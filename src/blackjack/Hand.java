@@ -11,14 +11,14 @@ public class Hand {
 		playerHand = new ArrayList<Card>();											//constructor creates new hand, an ArrayList
 	}
 
-	public ArrayList<Card> getPlayerHand(){return playerHand;}
+	public ArrayList<Card> getPlayerHand(){return playerHand;}						//return players hand
 	
 	public void addToHand(Card card) {
 		playerHand.add(card);														//adds a card object to the hand
 	}
 	
 	public void clearHand() {
-		playerHand.clear();
+		playerHand.clear();															//empties hand
 	}
 	
 	public int handValue(){																
@@ -51,8 +51,8 @@ public class Hand {
 		return false;																//otherwise return false
 	}
 	
-	public boolean has21() {
-		if (handValue() != 21)
+	public boolean has21() {					//returns false if hand not equal to 21. Else true.		
+		if (handValue() != 21)					
 			return false;
 		return true;
 	}

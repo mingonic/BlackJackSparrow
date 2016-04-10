@@ -6,26 +6,24 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-//import java.awt.image.*;
-//import java.io.*;
-
-//import javax.imageio.ImageIO;
 
 public class Card {
 
+	//class attributes
 	private String suite;
 	private String name;
 	private String imageLoc, imageBackLoc;
-	private BufferedImage image, imageBack;
+	private BufferedImage image;
+	private static BufferedImage imageBack;			//all images have the same back.
 	
 	//Constructor
 	public Card (String s, String n, String i) {
 		suite = s;
 		name = n;
-		imageLoc = "resources/"+i+".gif";
-		imageBackLoc = "resources/b.gif";
-		this.image = initCardImage();
-		this.imageBack = initCardBackImage();
+		imageLoc = "resources/"+i+".gif";			//location to find card image
+		imageBackLoc = "resources/b.gif";			//location to find card back image
+		image = initCardImage();
+		imageBack = initCardBackImage();
 		
 	}
 
@@ -36,7 +34,7 @@ public class Card {
 	public BufferedImage getBackImage(){return imageBack;}
 	
 
-	public BufferedImage initCardImage(){
+	public BufferedImage initCardImage(){				//image is read from a file located at imageLoc
 		try {
 			image = ImageIO.read(new File(imageLoc));
 		} catch(IOException e) {
@@ -48,7 +46,7 @@ public class Card {
 	
 	public BufferedImage initCardBackImage(){
 		try {
-			imageBack = ImageIO.read(new File(imageBackLoc));
+			imageBack = ImageIO.read(new File(imageBackLoc));	//image is read from a file located at imageBackLoc
 		} catch(IOException e) {
 			e.printStackTrace();
 			System.out.println("IMAGE NOT FOUND");
