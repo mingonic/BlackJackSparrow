@@ -11,6 +11,8 @@ public class Hand {
 		playerHand = new ArrayList<Card>();											//constructor creates new hand, an ArrayList
 	}
 
+	public ArrayList<Card> getPlayerHand(){return playerHand;}
+	
 	public void addToHand(Card card) {
 		playerHand.add(card);														//adds a card object to the hand
 	}

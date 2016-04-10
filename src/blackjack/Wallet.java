@@ -38,6 +38,6 @@ public class Wallet
 	
 	public String toString()
 	{
-		return "Total funds in wallet: $" + total;
+		return total+"";
 	}
 }
