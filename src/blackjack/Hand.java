@@ -56,7 +56,7 @@ public class Hand {
 			return false;
 		return true;
 	}
-	
+
 	public String toString(){
 		String result = "";
 		for (int i = 0; i < playerHand.size(); i++){
