@@ -10,7 +10,7 @@ public class Game extends javax.swing.JFrame {				//extend for use of button ope
 	private Deck theDeck;
 	private BettingPool moneyPit;
 	private double bet;	
-	boolean dealersTurn = false;
+	private boolean dealersTurn = false;
 	private GUI gui;
 	
 	//constructor
