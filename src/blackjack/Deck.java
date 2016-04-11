@@ -9,9 +9,9 @@ public class Deck {
 	private ArrayList<Card> cards = new ArrayList<Card>();	//ArrayList of Card objects.
 	private String[] ranks = new String[]{"two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "Jack", "Queen", "King", "ace"};
 	private String[] suites = new String[]{"spades", "hearts", "diamonds", "clubs"};
-	String filechar;				//for GUI - part of file name for card image
-	String filerank;				//for GUI - part of file name for card image			
-	String imgFile;					//for GUI - part of file name for card image			
+	private String filechar;				//for GUI - part of file name for card image
+	private String filerank;				//for GUI - part of file name for card image			
+	private String imgFile;					//for GUI - part of file name for card image			
 	
 	//constructor
 	public Deck(){
